@@ -12,6 +12,17 @@ pub fn main() -> Result<(), PdfiumError> {
     // MacOS, libpdfium.dylib. We can use the Pdfium::pdfium_platform_library_name_at_path()
     // function to append the correct library name for the current platform to a path we specify.
 
+    #[cfg(target_os = "linux")]
+    let bindings = Pdfium::bind_to_library(
+        // Attempt to bind to a pdfium library in the current working directory...
+        Pdfium::pdfium_platform_library_name_at_path("/usr/local/lib/"),
+    )
+    .or_else(
+        // ... and fall back to binding to a system-provided pdfium library.
+        |_| Pdfium::bind_to_system_library(),
+    )?;
+
+    #[cfg(target_os = "macos")]
     let bindings = Pdfium::bind_to_library(
         // Attempt to bind to a pdfium library in the current working directory...
         Pdfium::pdfium_platform_library_name_at_path("./"),
