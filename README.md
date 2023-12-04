@@ -33,5 +33,4 @@ sudo wget -q https://cdn.edesoft.com/tools/pdf2jpg/macos/libpdfium.dylib -O /usr
 sudo wget -q https://cdn.edesoft.com/tools/pdf2jpg/linux/pdf2jpg -O /usr/local/bin/pdf2jpg
 sudo chmod 777 /usr/local/bin/pdf2jpg
 sudo wget -q https://cdn.edesoft.com/tools/pdf2jpg/linux/libpdfium.so -O /usr/local/lib/libpdfium.so
-sudo chmod 777 /usr/local/lib/libpdfium.so
 ```
