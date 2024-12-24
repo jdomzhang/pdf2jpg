@@ -25,6 +25,7 @@ TARGET_CC=x86_64-linux-musl-gcc cargo build --release --target x86_64-unknown-li
 sudo wget -q https://cdn.edesoft.com/tools/pdf2jpg/macos/pdf2jpg -O /usr/local/bin/pdf2jpg
 sudo chmod 777 /usr/local/bin/pdf2jpg
 sudo wget -q https://cdn.edesoft.com/tools/pdf2jpg/macos/libpdfium.dylib -O /usr/local/lib/libpdfium.dylib
+sudo wget -q https://cdn.edesoft.com/tools/pdf2jpg/macos/libpdfium.dylib -O /opt/homebrew/lib/libpdfium.dylib
 ```
 
 ## install on linux
